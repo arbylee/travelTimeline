@@ -2,6 +2,7 @@
   <head>
     <title>Richard and Emily's Travel Timeline!</title>
     <link href="styles/app.css" rel="stylesheet" type="text/css">
+    <link href="mapbox.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="container">
@@ -9,10 +10,24 @@
         Richard and Emily Travel
       </h1>
       <div class="map">
+        <iframe width='100%' height='200px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/arbylee.o2819g0f/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiYXJieWxlZSIsImEiOiJjaWdoZ2xjZWM4M2lmdjhtN3g2NzQxcncyIn0.Ru65y4i-50cxaM7_UA-D_w'></iframe>
         Some map here
       </div>
+      <div id="placeholder"></div>
+      <script id="test" type="text/x-handlebars-template">
+        <svg width="1000" height="100">
+          {{#each trips}}
+            <circle cx={{this.x}} cy="50" r="40" stroke="black" stroke-width="4" fill="white" />
+          {{/each}}
+        </svg>
+        <div>{{content}}</div>
+      </script>
       <div class="timeline">
-        Some timeline thing here
+        <svg width="1000" height="100">
+          <line x1="90" y1="50" x2="220" y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
+          <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="white" />
+          <circle cx="150" cy="50" r="40" stroke="black" stroke-width="4" fill="white" />
+        </svg>
       </div>
       <div class="blurb clearfix">
         <h2 class="blurb-header">
@@ -28,5 +43,9 @@
         </div>
       </div>
     </div>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="mapbox.js"></script>
+    <script src="handlebars-v4.0.4.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
