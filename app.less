@@ -1,3 +1,15 @@
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+body {
+  background: lightblue;
+}
 
 @font-face {
   font-family: Lobster;
@@ -55,6 +67,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid black;
 }
 
 .blurb-header {
