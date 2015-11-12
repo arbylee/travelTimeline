@@ -20,19 +20,7 @@
           <circle cx="150" cy="50" r="40" stroke="black" stroke-width="4" fill="white" />
         </svg>
       </div>
-      <div class="blurb clearfix">
-        <h2 class="blurb-header">
-          Cincinnati, OH, 11/1/2015
-        </h2>
-        <div class="blurb-image">
-        </div>
-        <div class="blurb-text">
-          We visited the great wall of China and drank tea at one of the watch towers!
-          We might have some other content here.
-          Like a picture.
-          This is probably the most that we would type here. Just a few sentences worth
-        </div>
-      </div>
+      <div id="trip-blurbs"></div>
     </div>
     <div id="templates">
       <script id="trip-graph-template" type="text/x-handlebars-template">
@@ -42,7 +30,20 @@
             <circle cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" />
           {{/each}}
         </svg>
-        <div>{{content}}</div>
+      </script>
+      <script id="trip-blurb-template" type="text/x-handlebars-template">
+        {{#each trips}}
+          <div class="blurb clearfix">
+            <h2 class="blurb-header">
+              {{this.location}}, {{this.date}}
+            </h2>
+            <div class="blurb-image">
+            </div>
+            <div class="blurb-text">
+              {{this.description}}
+            </div>
+          </div>
+        {{/each}}
       </script>
     </div>
     <script src="scripts/vendor/jquery-2.1.4.min.js"></script>
