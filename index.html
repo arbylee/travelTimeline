@@ -12,15 +12,7 @@
       <div id="map">
         <img src='https://api.mapbox.com/v4/arbylee.o2819g0f/auto/1000x600.png?access_token=pk.eyJ1IjoiYXJieWxlZSIsImEiOiJjaWdoZ2xjZWM4M2lmdjhtN3g2NzQxcncyIn0.Ru65y4i-50cxaM7_UA-D_w'></img>
       </div>
-      <div id="placeholder"></div>
-      <script id="test" type="text/x-handlebars-template">
-        <svg width="1000" height="100">
-          {{#each trips}}
-            <circle cx={{this.x}} cy="50" r="40" stroke="black" stroke-width="4" fill="white" />
-          {{/each}}
-        </svg>
-        <div>{{content}}</div>
-      </script>
+      <div id="trip-graph"></div>
       <div class="timeline">
         <svg width="1000" height="100">
           <line x1="90" y1="50" x2="220" y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
@@ -42,9 +34,22 @@
         </div>
       </div>
     </div>
+    <div id="templates">
+      <script id="trip-graph-template" type="text/x-handlebars-template">
+        <svg width="1000" height="100">
+          <line x1="90" y1="50" x2={{totalTripLength}} y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
+          {{#each trips}}
+            <circle cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" />
+          {{/each}}
+        </svg>
+        <div>{{content}}</div>
+      </script>
+    </div>
     <script src="scripts/vendor/jquery-2.1.4.min.js"></script>
     <script src="scripts/vendor/mapbox.js"></script>
     <script src="scripts/vendor/handlebars-v4.0.4.js"></script>
+    <script src="scripts/vendor/lodash.js"></script>
     <script src="scripts/app.js"></script>
+
   </body>
 </html>
