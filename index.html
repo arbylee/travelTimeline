@@ -22,13 +22,13 @@
         <svg width="1000" height="100">
           <line x1="90" y1="50" x2={{totalTripLength}} y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
           {{#each trips}}
-            <circle cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" />
+            <circle cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" class="trip-icon" data-trip-id="{{this.id}}"/>
           {{/each}}
         </svg>
       </script>
       <script id="trip-blurb-template" type="text/x-handlebars-template">
         {{#each trips}}
-          <div class="blurb clearfix {{#if @first}}active{{/if}}">
+          <div data-trip-id="{{this.id}}" class="blurb clearfix {{#if @first}}active{{/if}}">
             <h2 class="blurb-header">
               {{this.location}}, {{this.date}}
             </h2>
