@@ -20,7 +20,7 @@
     <div id="templates">
       <script id="trip-graph-template" type="text/x-handlebars-template">
         <svg width="1000" height="100">
-          <line x1="90" y1="50" x2={{totalTripLength}} y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
+        <line x1={{timeLineStart}} y1="50" x2={{totalTripLength}} y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
           {{#each trips}}
             <circle cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" />
           {{/each}}
@@ -32,8 +32,8 @@
             <h2 class="blurb-header">
               {{this.location}}, {{this.date}}
             </h2>
-            <div class="blurb-image">
-            </div>
+            <img src="http://lorempixel.com/275/350/cats/" class="blurb-image">
+            </img>
             <div class="blurb-text">
               {{this.description}}
             </div>

@@ -8,13 +8,14 @@ var source   = $("#trip-graph-template").html();
 var template = Handlebars.compile(source);
 var spaceBetween = 100;
 var startingX = 50;
-var radius = 40;
+var radius = 10;
 _.each(trips, function(trip, index){
   trip.x = startingX + (index * spaceBetween);
-  trip.radius = 40;
+  trip.radius = radius;
 });
 var totalTripLength = startingX + spaceBetween * (trips.length-1);
-var html = template({trips: trips, totalTripLength: totalTripLength});
+var timeLineStart = startingX + radius;
+var html = template({trips: trips, timeLineStart: timeLineStart, totalTripLength: totalTripLength});
 $('#trip-graph').html(html)
 
 
