@@ -1,4 +1,5 @@
 import renderTemplate from "./renderTemplate.js";
+import initGraphPoints from "./graphPoints.js";
 
 const SPACE_BETWEEN_POINTS = 100;
 const STARTING_X = 50;
@@ -17,4 +18,5 @@ export default function(trips){
     totalTripLength: totalTripLength
   };
   renderTemplate("trip-graph", data);
+  initGraphPoints();
 }
