@@ -3,14 +3,13 @@
 import trips from "./data.js";
 import Handlebars from "./vendor/handlebars-v4.0.4.js";
 import $ from "./vendor/jquery-2.1.4.min.js";
-import _ from "./vendor/lodash.js";
 
 var source   = $("#trip-graph-template").html();
 var template = Handlebars.compile(source);
 var spaceBetween = 100;
 var startingX = 50;
 var radius = 10;
-_.each(trips, function(trip, index){
+trips.forEach(function(trip, index){
   trip.x = startingX + (index * spaceBetween);
   trip.radius = radius;
 });
