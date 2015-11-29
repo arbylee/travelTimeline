@@ -1,8 +1,9 @@
-var trips = [
-  {location: 'Chicago, IL', date: 'November 11, 2015', description: "Migas master cleanse butcher, tousled stumptown scenester lomo synth brunch twee ethical craft beer try-hard squid actually. Retro brunch freegan, listicle austin swag actually distillery. Meditation roof party godard put a bird on it. Seitan pour-over church-key, selvage vegan mixtape fixie cold-pressed wolf synth farm-to-table kinfolk kickstarter. Fingerstache iPhone distillery meggings, street art drinking vinegar forage single-origin coffee direct trade echo park. Health goth chia ramps seitan 90's, cornhole hella. Retro viral waistcoat iPhone keffiyeh narwhal."},
-  {location: 'Goa, India', date: 'November 15, 2015', description: "Migas master cleanse butcher, tousled stumptown scenester lomo synth brunch twee ethical craft beer try-hard squid actually. Retro brunch freegan, listicle austin swag actually distillery. Meditation roof party godard put a bird on it. Seitan pour-over church-key, selvage vegan mixtape fixie cold-pressed wolf synth farm-to-table kinfolk kickstarter. Fingerstache iPhone distillery meggings, street art drinking vinegar forage single-origin coffee direct trade echo park. Health goth chia ramps seitan 90's, cornhole hella. Retro viral waistcoat iPhone keffiyeh narwhal."},
-  {location: 'Melbourne, Australia', date: 'December 31, 2015', description: "Migas master cleanse butcher, tousled stumptown scenester lomo synth brunch twee ethical craft beer try-hard squid actually. Retro brunch freegan, listicle austin swag actually distillery. Meditation roof party godard put a bird on it. Seitan pour-over church-key, selvage vegan mixtape fixie cold-pressed wolf synth farm-to-table kinfolk kickstarter. Fingerstache iPhone distillery meggings, street art drinking vinegar forage single-origin coffee direct trade echo park. Health goth chia ramps seitan 90's, cornhole hella. Retro viral waistcoat iPhone keffiyeh narwhal."}
-];
+"use strict";
+
+import trips from "./data.js";
+import Handlebars from "./vendor/handlebars-v4.0.4.js";
+import $ from "./vendor/jquery-2.1.4.min.js";
+import _ from "./vendor/lodash.js";
 
 var source   = $("#trip-graph-template").html();
 var template = Handlebars.compile(source);

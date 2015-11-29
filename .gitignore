@@ -1,1 +1,3 @@
 styles/*.css
+scripts/build
+node_modules
