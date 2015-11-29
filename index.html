@@ -12,12 +12,12 @@
       <div id="map">
       </div>
       <div class="timeline">
-      <div id="trip-graph"></div>
+      <div id="trip-graph__view"></div>
       </div>
-      <div id="trip-blurbs"></div>
+      <div id="trip-blurbs__view"></div>
     </div>
     <div id="templates">
-      <script id="trip-graph-template" type="text/x-handlebars-template">
+      <script id="trip-graph__template" type="text/x-handlebars-template">
         <svg width="1000" height="100">
         <line x1={{timeLineStart}} y1="50" x2={{totalTripLength}} y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
           {{#each trips}}
@@ -25,7 +25,7 @@
           {{/each}}
         </svg>
       </script>
-      <script id="trip-blurb-template" type="text/x-handlebars-template">
+      <script id="trip-blurbs__template" type="text/x-handlebars-template">
         {{#each trips}}
           <div class="blurb clearfix {{#if @first}}active{{/if}}">
             <h2 class="blurb-header">
