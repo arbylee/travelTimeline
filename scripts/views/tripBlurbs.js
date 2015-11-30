@@ -7,8 +7,8 @@ export default function(trips){
 }
 
 export function showSelectedBlurb(tripId){
-    $(`.blurb__element`).removeClass("active");
-    $(`.blurb-${tripId}__element`).addClass("active");
+    $(`.blurb__element`).removeClass("-active");
+    $(`.blurb-${tripId}__element`).addClass("-active");
 };
 
 
