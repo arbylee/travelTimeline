@@ -27,7 +27,7 @@
       </script>
       <script id="trip-blurbs__template" type="text/x-handlebars-template">
         {{#each trips}}
-        <div class="blurb clearfix blurb__element blurb-{{this.id}}__element {{#if @first}}-active{{/if}}">
+        <div class="blurb clearfix blurb__element {{#if @first}}-active{{/if}}" data-id="{{this.id}}">
             <h2 class="blurb-header">
               {{this.location}}, {{this.date}}
             </h2>
