@@ -1,4 +1,5 @@
 import trips from "./data.js";
+import MARKERS from "./markers.js";
 
 const MAP_OPTIONS = {
   zoomControl: false,
@@ -13,6 +14,9 @@ export default function(){
   let map = L.mapbox.map('map', 'arbylee.oa107lhc', MAP_OPTIONS).setView([25, 0], 2);
   trips.forEach(function(trip, index){
     trip.marker = L.marker(trip.coordinates).addTo(map);
+    trip.marker.setIcon(L.mapbox.marker.icon({
+      'marker-color': MARKERS.defaultColor
+    }))
   });
 
   map.dragging.disable();
