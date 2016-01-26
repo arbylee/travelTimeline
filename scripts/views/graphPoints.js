@@ -1,5 +1,6 @@
 import $ from "../vendor/jquery-2.1.4.min.js";
 import {showSelectedBlurb} from "./tripBlurbs.js";
+import {highlightTripMarker} from "./tripGraph.js";
 
 export default function() {
   let graphPoints = $(".graph-point__element");
@@ -9,5 +10,6 @@ export default function() {
     graphPoints.attr("fill", "white");
     selectedGraphPoint.attr("fill", "black");
     showSelectedBlurb(selectedTripId);
+    highlightTripMarker(selectedTripId);
   });
 };

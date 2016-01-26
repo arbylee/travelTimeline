@@ -1,5 +1,7 @@
 import renderTemplate from "./renderTemplate.js";
 import initGraphPoints from "./graphPoints.js";
+import trips from "../data.js"
+import MARKERS from '../markers.js'
 
 const SPACE_BETWEEN_POINTS = 100;
 const STARTING_X = 50;
@@ -19,4 +21,18 @@ export default function(trips){
   };
   renderTemplate("trip-graph", data);
   initGraphPoints();
+}
+
+export function highlightTripMarker(tripId){
+  trips.forEach(function(trip, index){
+    if(trip.id == tripId) {
+      trip.marker.setIcon(L.mapbox.marker.icon({
+        'marker-color': MARKERS.highlightColor
+      }))
+    } else {
+      trip.marker.setIcon(L.mapbox.marker.icon({
+        'marker-color': MARKERS.defaultColor
+      }))
+    }
+  });
 }
