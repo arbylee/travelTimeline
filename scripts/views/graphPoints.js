@@ -3,13 +3,26 @@ import {showSelectedBlurb} from "./tripBlurbs.js";
 import {highlightTripMarker} from "./tripGraph.js";
 
 export default function() {
-  let graphPoints = $(".graph-point__element");
+  let graphPoints = getGraphPoints();
   graphPoints.click((event)=>{
     let selectedGraphPoint = $(event.target);
-    let selectedTripId = selectedGraphPoint.data("id");
-    graphPoints.attr("fill", "white");
-    selectedGraphPoint.attr("fill", "black");
-    showSelectedBlurb(selectedTripId);
-    highlightTripMarker(selectedTripId);
+    selectTripPoint(selectedGraphPoint);
   });
 };
+
+export function getGraphPoints() {
+  return $(".graph-point__element");
+}
+
+export function getFirstGraphPoint() {
+  return $(".graph-point__element:first");
+}
+
+export function selectTripPoint(element) {
+  let graphPoints = getGraphPoints();
+  let selectedTripId = element.data("id");
+  graphPoints.attr("fill", "white");
+  element.attr("fill", "black");
+  showSelectedBlurb(selectedTripId);
+  highlightTripMarker(selectedTripId);
+}

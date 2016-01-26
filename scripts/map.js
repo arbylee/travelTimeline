@@ -24,5 +24,7 @@ export default function(){
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   if (map.tap) map.tap.disable();
+
+  return map
 }
 
