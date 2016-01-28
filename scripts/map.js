@@ -3,10 +3,7 @@ import MARKERS from "./markers.js";
 
 const MAP_OPTIONS = {
   zoomControl: false,
-  tileLayer: {
-    continuousWorld: false,
-    noWrap: true
-  }
+  worldCopyJump: true
 }
 
 export default function(){
@@ -19,11 +16,9 @@ export default function(){
     }))
   });
 
-  map.dragging.disable();
   map.touchZoom.disable();
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
-  if (map.tap) map.tap.disable();
 
   return map
 }
