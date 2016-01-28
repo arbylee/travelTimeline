@@ -14,8 +14,8 @@ export function getGraphPoints() {
   return $(".graph-point__element");
 }
 
-export function getFirstGraphPoint() {
-  return $(".graph-point__element:first");
+export function getLastGraphPoint() {
+  return $(".graph-point__element:last");
 }
 
 export function selectTripPoint(element) {
