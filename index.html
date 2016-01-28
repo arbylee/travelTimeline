@@ -6,15 +6,17 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="page-header">
-        Richard and Emily Travel
-      </h1>
-      <div id="map">
+      <div class="top-section">
+        <h1 class="page-header">
+          Richard and Emily Travel
+        </h1>
+        <div class="blurbs-overlay" id="trip-blurbs__view"></div>
+        <div id="map">
+        </div>
+        <div class="timeline">
+          <div id="trip-graph__view"></div>
+        </div>
       </div>
-      <div class="timeline">
-      <div id="trip-graph__view"></div>
-      </div>
-      <div id="trip-blurbs__view"></div>
     </div>
     <div id="templates">
       <script id="trip-graph__template" type="text/x-handlebars-template">
@@ -27,12 +29,12 @@
       </script>
       <script id="trip-blurbs__template" type="text/x-handlebars-template">
         {{#each trips}}
-        <div class="blurb clearfix blurb__element {{#if @first}}-active{{/if}}" data-id="{{this.id}}">
+          <div class="blurb clearfix blurb__element {{#if @first}}-active{{/if}}" data-id="{{this.id}}">
+            <img src="http://lorempixel.com/275/350/cats/" class="blurb-image">
+            </img>
             <h2 class="blurb-header">
               {{this.location}}, {{this.date}}
             </h2>
-            <img src="http://lorempixel.com/275/350/cats/" class="blurb-image">
-            </img>
             <div class="blurb-text">
               {{this.description}}
             </div>

@@ -38,16 +38,10 @@
 
 body {
   margin-top: 0;
-  //background-color: #D1BD75
-  //background-color: #A2CDF2;
-  //background-color: #4A7AA0;
   background-color: #F0EAE7;
-  //background-color: #e4d9d4;
 }
 
 .container {
-  background: #A2CDF2;
-  width: 1000px;
   margin-left: auto;
   margin-right: auto;
   font-family: Open Sans;
@@ -55,19 +49,33 @@ body {
 
 .page-header {
   font-family: Lobster;
-  padding: 0.5em 0 0.5em 0.5em;
-  //background-color: #4A7AA0;
-  //background-color: #526B86;
-  background-color: #A8D8FC;
-  //A2CDF2
-  //A8D8FC
-  //D1BD75
-  //526B86
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
+  background: rgba(255, 255, 255, 0.6);
   margin: 0;
+  height: 1em;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.blurbs-overlay {
+  margin: 1.5em 0 0 1.5em;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  z-index: 2;
+  background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.top-section {
+  position: relative;
 }
 
 #map {
-  height: 42em;
+  height: 100%;
   cursor: initial;
   .leaflet-marker-icon {
     cursor: initial;
@@ -75,6 +83,8 @@ body {
 }
 
 .timeline {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 6em;
 }
@@ -94,15 +104,12 @@ body {
 }
 
 .blurb-header {
+  font-size: 16px;
 }
 
 .blurb-image {
-  width: 50%;
-  float: left;
 }
 
 .blurb-text {
-  width: 40%;
-  float: right;
 }
 
