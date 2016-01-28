@@ -23,7 +23,7 @@
         <svg width="1000" height="100">
         <line x1={{timeLineStart}} y1="50" x2={{totalTripLength}} y2="50" style="stroke:rgb(0,0,0);stroke-width:2" />
           {{#each trips}}
-          <circle class="graph-point graph-point__element" data-id={{this.id}} cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" />
+          <circle class="graph-point graph-point__element" data-coordinates={{this.coordinates}} data-id={{this.id}} cx={{this.x}} cy="50" r={{this.radius}} stroke="black" stroke-width="4" fill="white" />
           {{/each}}
         </svg>
       </script>

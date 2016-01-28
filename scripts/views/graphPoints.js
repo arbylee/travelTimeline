@@ -1,6 +1,7 @@
 import $ from "../vendor/jquery-2.1.4.min.js";
 import {showSelectedBlurb} from "./tripBlurbs.js";
 import {highlightTripMarker} from "./tripGraph.js";
+import getMap from "../map.js"
 
 export default function() {
   let graphPoints = getGraphPoints();
@@ -18,6 +19,11 @@ export function getLastGraphPoint() {
   return $(".graph-point__element:last");
 }
 
+export function getCoordinates(element) {
+  let stringCoordinates = $(element).data('coordinates');
+  return stringCoordinates.split(",");
+}
+
 export function selectTripPoint(element) {
   let graphPoints = getGraphPoints();
   let selectedTripId = element.data("id");
@@ -25,4 +31,5 @@ export function selectTripPoint(element) {
   element.attr("fill", "black");
   showSelectedBlurb(selectedTripId);
   highlightTripMarker(selectedTripId);
+  getMap().panTo(getCoordinates(element));
 }

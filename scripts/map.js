@@ -6,9 +6,15 @@ const MAP_OPTIONS = {
   worldCopyJump: true
 }
 
+var map;
+
 export default function(){
+  if(map){
+    return map;
+  }
+
   L.mapbox.accessToken = 'pk.eyJ1IjoiYXJieWxlZSIsImEiOiJjaWdoZ2xjZWM4M2lmdjhtN3g2NzQxcncyIn0.Ru65y4i-50cxaM7_UA-D_w';
-  let map = L.mapbox.map('map', 'arbylee.oa107lhc', MAP_OPTIONS).setView([25, 0], 2);
+  map = L.mapbox.map('map', 'arbylee.oa107lhc', MAP_OPTIONS).setView([25, 0], 2);
   trips.forEach(function(trip, index){
     trip.marker = L.marker(trip.coordinates).addTo(map);
     trip.marker.setIcon(L.mapbox.marker.icon({
