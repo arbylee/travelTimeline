@@ -5,7 +5,7 @@ import MARKERS from '../markers.js'
 
 const SPACE_BETWEEN_POINTS = 100;
 const STARTING_X = 50;
-const RADIUS = 10;
+const RADIUS = 8;
 const TIMELINE_START = STARTING_X + RADIUS;
 
 export default function(trips){
