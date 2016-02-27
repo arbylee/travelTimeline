@@ -7,6 +7,7 @@ const MAP_OPTIONS = {
 }
 
 var map;
+var L = window.L;
 
 export default function(){
   if(map){
