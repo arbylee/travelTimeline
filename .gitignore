@@ -2,3 +2,5 @@ styles/*.css
 scripts/build
 node_modules
 npm-debug.log
+.DS_Store
+NERD_tree_1
