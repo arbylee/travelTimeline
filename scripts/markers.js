@@ -1,4 +1,4 @@
 export default {
-  defaultColor: '#ff8888',
-  highlightColor: '#ff4444'
+  defaultColor: '#BBBBFF',
+  highlightColor: '#33AAFF'
 }

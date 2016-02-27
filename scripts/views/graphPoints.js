@@ -2,6 +2,7 @@ import $ from "../vendor/jquery-2.1.4.min.js";
 import {showSelectedBlurb} from "./tripBlurbs.js";
 import {highlightTripMarker} from "./tripGraph.js";
 import getMap from "../map.js"
+import MARKERS from '../markers.js'
 
 export default function() {
   let graphPoints = getGraphPoints();
@@ -27,8 +28,8 @@ export function getCoordinates(element) {
 export function selectTripPoint(element) {
   let graphPoints = getGraphPoints();
   let selectedTripId = element.data("id");
-  graphPoints.attr("fill", "white");
-  element.attr("fill", "black");
+  graphPoints.attr("fill", MARKERS.defaultColor);
+  element.attr("fill", MARKERS.highlightColor);
   showSelectedBlurb(selectedTripId);
   highlightTripMarker(selectedTripId);
   getMap().panTo(getCoordinates(element));

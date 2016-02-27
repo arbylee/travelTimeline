@@ -30,7 +30,7 @@
       <script id="trip-blurbs__template" type="text/x-handlebars-template">
         {{#each trips}}
           <div class="blurb clearfix blurb__element {{#if @first}}-active{{/if}}" data-id="{{this.id}}">
-            <img src="http://lorempixel.com/275/350/cats/" class="blurb-image">
+            <img src="img/{{this.image}}" class="blurb-image">
             </img>
             <h2 class="blurb-header">
               {{this.location}}, {{this.date}}
